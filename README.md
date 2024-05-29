@@ -2,7 +2,7 @@
 
 ## Descrição
 
-Este projeto foi desenvolvido pelos estudantes da Fundação de Comércio Álvares Penteado (FECAP) com o objetivo de contribuir para a meta 14 da ONU, que visa conservar e utilizar de forma sustentável os oceanos, mares e recursos marinhos para o desenvolvimento sustentável. Nosso foco é monitorar a qualidade da água marinha utilizando um sistema baseado em Arduino.
+Este projeto foi desenvolvido pelo Gustabo Prando estudanteda Fundação de Comércio Álvares Penteado (FECAP) com o objetivo de contribuir para a meta 14 da ONU, que visa conservar e utilizar de forma sustentável os oceanos, mares e recursos marinhos para o desenvolvimento sustentável. Nosso foco é monitorar a qualidade da água marinha utilizando um sistema baseado em Arduino.
 
 ## Objetivo
 
@@ -51,7 +51,7 @@ Este projeto está licenciado sob a licença MIT. Consulte o arquivo `LICENSE` p
 
 ---
 
-Desenvolvido com dedicação pelos estudantes da FECAP para um futuro marinho mais sustentável. 🌊
+Desenvolvido com dedicação peloestudante Gustavo Prando da FECAP para um futuro marinho mais sustentável. 🌊
 
 ---
 
