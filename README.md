@@ -22,14 +22,14 @@ O objetivo principal deste projeto é criar um dispositivo que possa monitorar p
     git clone https://github.com/usuario/repositorio.git
     ```
 2. **Montar o circuito**:
-   - Conectar o ESP8266 à protoboard.
+   - Conectar o ESP32 à protoboard.
    - Ligar o sensor DS18B20 ao ESP8266 conforme o esquema fornecido no diretório `schematics`.
-   - Conectar o sensor de turbidez ao ESP8266 conforme o mesmo esquema.
-3. **Carregar o código para o ESP8266**:
+   - Conectar o sensor de turbidez ao ESP32 conforme o mesmo esquema.
+3. **Carregar o código para o ESP32**:
    - Abra o Arduino IDE.
    - Carregue o arquivo `.ino` do projeto.
    - Configure as bibliotecas necessárias (OneWire, DallasTemperature, etc.).
-   - Carregue o código para o ESP8266.
+   - Carregue o código para o ESP32.
 4. **Configurar a conexão Wi-Fi**:
    - No código, insira as credenciais de sua rede Wi-Fi.
    - Defina o servidor ou a plataforma onde os dados serão enviados (por exemplo, ThingSpeak).
@@ -37,7 +37,7 @@ O objetivo principal deste projeto é criar um dispositivo que possa monitorar p
 ## Como Usar
 
 1. **Ligar o dispositivo**:
-   - Conecte o ESP8266 a uma fonte de energia (bateria ou USB).
+   - Conecte o ESP32 a uma fonte de energia (bateria ou USB).
 2. **Monitorar os dados**:
    - Acesse a plataforma online configurada para visualizar os dados de temperatura e turbidez da água em tempo real.
 
