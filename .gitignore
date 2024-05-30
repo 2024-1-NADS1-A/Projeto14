@@ -1,32 +1,118 @@
-# Prerequisites
-*.d
+#include <WiFi.h>
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
+// Defina as credenciais do Wi-Fi
+#define WIFI_SSID "iPhone de Gustavo"
+#define WIFI_PASSWORD "gu123456"
 
-# Precompiled Headers
-*.gch
-*.pch
+// Defina o pino para o sensor de água
+int sensorPin = 32; // Use um pino do ADC1
+int leitura; // Variável responsável por guardar o valor da leitura analógica do sensor
+String condicao; // Variável para armazenar a condição da água
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
+// Função para conectar ao Wi-Fi
+void connectWiFi() {
+  // Inicia a conexão Wi-Fi
+  WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
+  Serial.print("Connecting to Wi-Fi");
+  // Espera até que a conexão seja estabelecida
+  while (WiFi.status() != WL_CONNECTED) {
+    Serial.print(".");
+    delay(300);
+  }
+  Serial.println("Connected to Wi-Fi");
+}
 
-# Fortran module files
-*.mod
-*.smod
+// Função para realizar a leitura da turbidez
+void readSensors() {
+  // Realiza a leitura analógica do sensor de turbidez
+  leitura = analogRead(sensorPin);
+  Serial.print("Valor lido: "); // Imprime o valor lido no monitor serial
+  Serial.print(leitura); 
+  Serial.println(" NTU"); // Imprime a unidade NTU (Unidade Nefelométrica de Turbidez)
+  delay(600); // Intervalo de 0,5 segundos entre as leituras
+  Serial.print("Estado da água: "); // Imprime no monitor serial
 
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
+  // Verifica a condição da água com base na leitura
+  if (leitura > 700) { // Se o valor de leitura analógica estiver acima de 700
+    Serial.println("LIMPA");
+    condicao = "Limpa"; // Define a condição como "Limpa"
+  } else if ((leitura > 600) && (leitura <= 700)) { // Se o valor de leitura analógica estiver entre 600 e 700
+    Serial.println("UM POUCO SUJA"); // Define a condição como "Um Pouco Suja"
+    condicao = "Um Pouco Suja";
+  } else { // Se o valor de leitura analógica estiver abaixo de 600 
+    Serial.println("MUITO SUJA"); // Define a condição como "Muito Suja"
+    condicao = "Muito Suja";
+  }
+}
 
-# Executables
-*.exe
-*.out
-*.app
+void setup() {
+  // Inicializa a comunicação serial
+  Serial.begin(115200);
+  // Conecta ao Wi-Fi
+  connectWiFi();
+}
+
+void loop() {
+  // Realiza a leitura dos sensores
+  readSensors();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*#include <WiFi.h>
+
+
+// Defina as credenciais do Wi-Fi
+#define WIFI_SSID "iPhone de Gustavo"
+#define WIFI_PASSWORD "gu123456"
+
+// Defina o pino para o sensor de água
+int sensorPin = 32; // Use um pino do ADC1
+int leitura; // Variável responsável por guardar o valor da leitura analógica do sensor
+String condicao; // Variável para armazenar a condição da água
+
+// Função para conectar ao Wi-Fi
+void connectWiFi() {
+  // Inicia a conexão Wi-Fi
+  WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
+  Serial.print("Connecting to Wi-Fi");
+  // Espera até que a conexão seja estabelecida
+  while (WiFi.status() != WL_CONNECTED) {
+    Serial.print(".");
+    delay(300);
+  }
+
+// Função para realizar a leitura da  turbidez
+void readSensors() 
+  // Realiza a leitura analógica do sensor de turbidez
+  leitura = analogRead(sensorPin);
+  Serial.print("Valor lido: "); // Imprime o valor lido no monitor serial
+  Serial.print(leitura); 
+  Serial.println(" NTU"); // Imprime a unidade NTU (Unidade Nefelométrica de Turbidez)
+  delay(600); // Intervalo de 0,5 segundos entre as leituras
+  Serial.print("Estado da água: "); // Imprime no monitor serial
+
+  // Verifica a condição da água com base na leitura
+  if (leitura > 700) { // Se o valor de leitura analógica estiver acima de 700
+    Serial.println("LIMPA");
+    condicao = "Limpa"; // Define a condição como "Limpa"
+  } else if ((leitura > 600) && (leitura <= 700)) { // Se o valor de leitura analógica estiver entre 600 e 700
+    Serial.println("UM POUCO SUJA"); // Define a condição como "Um Pouco Suja"
+    condicao = "Um Pouco Suja";
+  } else { // Se o valor de leitura analógica estiver abaixo de 600 
+    Serial.println("MUITO SUJA"); // Define a condição como "Muito Suja"
+    condicao = "Muito Suja";
+  }
+
+}*/
+
+
