@@ -10,7 +10,7 @@ O objetivo principal deste projeto é criar um dispositivo que possa monitorar p
 
 ## Materiais Utilizados
 
-- **ESP8266**: Um microcontrolador com capacidade de conexão Wi-Fi, utilizado para enviar dados coletados para uma plataforma online.
+- **ESP32**: Um microcontrolador com capacidade de conexão Wi-Fi, utilizado para enviar dados coletados para uma plataforma online.
 - **Protoboard**: Uma placa de ensaio utilizada para montar e testar circuitos eletrônicos de forma temporária.
 - **DS18B20**: Um sensor de temperatura digital, utilizado para medir a temperatura da água.
 - **Sensor de Turbidez**: Utilizado para medir a turbidez da água, que é um indicador de partículas em suspensão.
